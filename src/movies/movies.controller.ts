@@ -1,4 +1,14 @@
-import { Body, Controller, Delete, Get, Param, Patch, Post, Query } from "@nestjs/common";
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  Param,
+  Patch,
+  Post,
+  Req,
+  Res
+} from "@nestjs/common";
 import { MoviesService } from "movies/movies.service";
 import { Movie } from "movies/entities/movie.entity";
 import { CreateMovieDto } from "movies/dto/create-movie.dto";
@@ -12,7 +22,7 @@ export class MoviesController {
 
 // декораторы пишутся над функциями всегда
   @Get()
-  getAll(): Movie[] {
+  getAll(/*@Res() res, @Req() req*/): Movie[] {
     // return "Здесь будут возвращаться все фильмы";
     return this.moviesService.getAll();
   }
