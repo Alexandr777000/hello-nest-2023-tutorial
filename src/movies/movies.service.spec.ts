@@ -125,4 +125,9 @@ describe("MoviesService", () => {
     });
   });
 
+  afterAll(async () => {
+    // удаляем все фильмы из БД после завершения всех тестов
+    /*await service.deleteAll();*/
+  });
+
 });
